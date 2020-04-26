@@ -4,6 +4,11 @@ WORKDIR /app
 
 COPY ./app /app/
 
-RUN yarn
+RUN yarn install 
 
-CMD ["yarn", "start"]
+RUN yarn build
+
+RUN yarn global add serve
+
+CMD ["serve", "-p", "80", "-s", "build"]
+
