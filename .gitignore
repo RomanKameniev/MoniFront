@@ -1,3 +1,5 @@
 /app/node_modules
 /app/yarn.lock
+/admin-panel/node_modules
+/admin-panel/yarn.lock
 
