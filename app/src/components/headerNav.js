@@ -9,7 +9,7 @@ const HeaderNav = () => {
 
 	return (
 		<Box justifyContent="flex-end" alignItems="center" bc="inherit" paddingRight="20px">
-			<StyledText onClick={toLoginPage} className="login-button" fontSize="25px" fontStyle="bold">
+			<StyledText className="login-button" onClick={toLoginPage} fontSize="25px" fontStyle="bold">
 				Login
 			</StyledText>
 		</Box>
