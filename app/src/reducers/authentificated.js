@@ -1,5 +1,5 @@
 import produce from 'immer';
-import { AUTHENTICATED_SET, AUTHENTICATED_RESET } from 'actions/authenticated';
+import { AUTHENTICATED_SET, AUTHENTICATED_RESET } from '../actions/authentificated';
 
 const initialState = null;
 

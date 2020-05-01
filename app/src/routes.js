@@ -39,11 +39,11 @@ export const AuthRoutes = [
 	{ path: '/registration', children: <Registration />, exact: true },
 ]
 export const AuthorizedRoutes = [
-	{ path: '/', children: <HomeAuth />, exact: true },
+	 { path: '/', children: <Home /> },
 	{ path: '/profile', children: <Profile />, exact: true },
 ]
 
-export const unAuthorizedRoutes = [...AuthRoutes, { path: '/', children: <Home />, exact: true }]
+export const unAuthorizedRoutes = [...AuthRoutes, { path: '/', children: <Home /> }]
 
 const unauthorizedRedirectRoutes = AuthorizedRoutes.map(({ path, exact }) => ({
 	path,
@@ -54,7 +54,7 @@ const unauthorizedRedirectRoutes = AuthorizedRoutes.map(({ path, exact }) => ({
 const getRoutes = (authenticated) => {
 	if (authenticated) return [...AuthRoutes]
 
-	return [...unAuthorizedRoutes, ...unauthorizedRedirectRoutes, ...AuthRoutes]
+	return [...unAuthorizedRoutes, ...unauthorizedRedirectRoutes]
 }
 
 export default getRoutes

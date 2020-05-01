@@ -1,5 +1,5 @@
 import produce from 'immer'
-import { VIEWER_SET, VIEWER_RESET } from 'actions/viewer'
+import { VIEWER_SET, VIEWER_RESET } from '../actions/viewer'
 
 const initialState = null
 

@@ -1,4 +1,4 @@
-import { getUser } from 'api/user';
+import { getUser } from '../api/user';
 
 export const VIEWER = 'VIEWER';
 export const VIEWER_SET = `${VIEWER}_SET`;
