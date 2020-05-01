@@ -3,32 +3,22 @@ import { Redirect } from 'react-router-dom'
 
 const Login = React.lazy(() =>
 	import(
-		/* webpackChunkName: login*/
 		'./pages/Login'
 	)
 )
 const Registration = React.lazy(() =>
 	import(
-		/* webpackChunkName: registration*/
 		'./pages/Registration'
 	)
 )
 const Profile = React.lazy(() =>
 	import(
-		/* webpackChunkName: registration*/
 		'./pages/Profile'
 	)
 )
 const Home = React.lazy(() =>
 	import(
-		/* webpackChunkName: home*/
 		'./pages/Home'
-	)
-)
-const HomeAuth = React.lazy(() =>
-	import(
-		/* webpackChunkName: home*/
-		'./pages/HomeAuth'
 	)
 )
 
