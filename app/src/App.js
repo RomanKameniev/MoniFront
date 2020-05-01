@@ -1,20 +1,31 @@
-import React from 'react'
-import logo from './logo.svg'
+import React, { Suspense, Fragment } from 'react'
 import './App.css'
+import Box from './ui/Box'
+import Header from './components/header'
+import Footer from './components/footer'
+import Home from './pages/Home'
+import Profile from './pages/Profile'
+import Page404 from './pages/NotFound'
+import { BrowserRouter } from 'react-router-dom'
+import Fallback from './ui/FallBack'
+import Router from './Router'
 
-function App() {
+const App = () => {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-					Learn React
-				</a>
-			</header>
-		</div>
+		<Fragment>
+			<Header />
+			<BrowserRouter>
+				<Suspense fallback={<Fallback />}>
+					<Router />
+				</Suspense>
+			</BrowserRouter>
+			<Footer />
+		</Fragment>
+		// <Box h="100%">
+		// 	<Box bc="red">hello</Box>
+		// 	<Box>hello</Box>
+		// 	<Box bc="red">hello</Box>
+		// </Box>
 	)
 }
 
