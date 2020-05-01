@@ -4,7 +4,7 @@ import StyledText from '../ui/StyledText'
 
 const Page404 = () => {
 	return (
-		<Box alignItems="center" justifyContent="center" h="1000px">
+		<Box alignItems="center" justifyContent="center" h="800px">
 			<StyledText fontSize="40px" fontStyle="bold" paddingBottom="500px">
 				Not found
 			</StyledText>
