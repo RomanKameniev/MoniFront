@@ -31,21 +31,27 @@
 .image-logo {
 	cursor: pointer;
 }
-.login-button {
+.login-button,
+.logout-button {
 	cursor: pointer;
-	
 }
-.login-button:hover {
-	color: #FFFFFF;
+.login-button:hover,
+.logout-button:hover {
+	color: #ffffff;
 }
 
+.tabs-component {
+	width: 100%;
+	background-color: #ffffff;
+	border-radius: 10px;
+}
 
 .input-default {
-	border: 1px solid #282c34; 
+	border: 1px solid #282c34;
 	box-shadow: #282c34;
 }
-.input-default:focus{
-	border: 1px solid #282c34; 
+.input-default:focus {
+	border: 1px solid #282c34;
 }
 .registration-link {
 	cursor: pointer;

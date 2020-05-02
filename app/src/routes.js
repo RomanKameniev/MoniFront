@@ -1,26 +1,10 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 
-const Login = React.lazy(() =>
-	import(
-		'./pages/Login'
-	)
-)
-const Registration = React.lazy(() =>
-	import(
-		'./pages/Registration'
-	)
-)
-const Profile = React.lazy(() =>
-	import(
-		'./pages/Profile'
-	)
-)
-const Home = React.lazy(() =>
-	import(
-		'./pages/Home'
-	)
-)
+const Login = React.lazy(() => import('./pages/Login'))
+const Registration = React.lazy(() => import('./pages/Registration'))
+const Profile = React.lazy(() => import('./pages/Profile'))
+const Home = React.lazy(() => import('./pages/Home'))
 
 export const AuthRoutes = [
 	// { path: '/set-password/:token', children: <SetPassword />, exact: true },
@@ -29,11 +13,11 @@ export const AuthRoutes = [
 	{ path: '/registration', children: <Registration />, exact: true },
 ]
 export const AuthorizedRoutes = [
-	 { path: '/', children: <Home /> },
+	{ path: '/', children: <Home />, exact: true },
 	{ path: '/profile', children: <Profile />, exact: true },
 ]
 
-export const unAuthorizedRoutes = [...AuthRoutes, { path: '/', children: <Home /> }]
+export const unAuthorizedRoutes = [...AuthRoutes, { path: '/', children: <Home />, exact: true }]
 
 const unauthorizedRedirectRoutes = AuthorizedRoutes.map(({ path, exact }) => ({
 	path,
@@ -42,7 +26,7 @@ const unauthorizedRedirectRoutes = AuthorizedRoutes.map(({ path, exact }) => ({
 })).filter(({ path }) => !unAuthorizedRoutes.some((r) => path === r.path))
 
 const getRoutes = (authenticated) => {
-	if (authenticated) return [...AuthRoutes]
+	if (authenticated) return [...AuthorizedRoutes]
 
 	return [...unAuthorizedRoutes, ...unauthorizedRedirectRoutes]
 }
@@ -58,5 +42,5 @@ export default getRoutes
 // 			<Home />
 // 		</Route>
 // 	</Switch>
-// 	
+//
 // </Router>

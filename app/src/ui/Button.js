@@ -14,6 +14,7 @@ const Button = ({ className = '', h = '35px', w = '150px', onClick, type, childr
 	if (type === 'primary') {
 		buttonStyle = {
 			background: '#333',
+			color:"#7BBAE4"
 		}
 	}
 
