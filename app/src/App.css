@@ -40,6 +40,17 @@
 }
 
 
+.input-default {
+	border: 1px solid #282c34; 
+	box-shadow: #282c34;
+}
+.input-default:focus{
+	border: 1px solid #282c34; 
+}
+.registration-link {
+	cursor: pointer;
+}
+
 @keyframes App-logo-spin {
 	from {
 		transform: rotate(0deg);
