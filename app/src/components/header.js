@@ -18,6 +18,7 @@ const Header = () => {
 			<Box bc="inherit">
 				<HeaderNav />
 			</Box>
+
 		</Box>
 	)
 }

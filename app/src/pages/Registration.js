@@ -5,6 +5,7 @@ import StyledText from '../ui/StyledText'
 import Button from '../ui/Button'
 import useNavigate from '../hooks/useNavigate'
 import { registration } from '../api/auth'
+import errorsNotifHandler from '../utils/notifHendler'
 
 const Registration = () => {
 	const navigate = useNavigate()
@@ -19,6 +20,7 @@ const Registration = () => {
 			let res = await registration({ email, password: p1, login })
 			console.log('res', res)
 		} catch (e) {
+			errorsNotifHandler(e)
 			console.log('e', e)
 		} finally {
 			console.log('finally')
@@ -26,6 +28,7 @@ const Registration = () => {
 	}
 	return (
 		<Box h="800px" justifyContent="center">
+
 			<Box fd="column" maxHeight="30em" maxWidth="400px" bc="#333" margin="10px" marginTop="30px" borderRadius="15px">
 				<StyledText alignSelf="center" padding="5px" fontSize="35px" fontStyle="bold" color="#ffffff">
 					Registration
