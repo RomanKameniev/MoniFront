@@ -1,5 +1,5 @@
 import axios from 'axios'
-import moment from 'moment'
+// import moment from 'moment'
 
 import * as localStorageTokens from '../localStorage'
 // const baseURL = `https://api.moni.wtf`
@@ -23,25 +23,25 @@ api.interceptors.request.use(
 	}
 )
 
-let retry = false
+// let retry = false
 
 api.interceptors.response.use(
 	(response) => {
-		const now = moment(Date.now())
-		const expireDate = moment(localStorageTokens.getExpireDate())
+		// const now = moment(Date.now())
+		// const expireDate = moment(localStorageTokens.getExpireDate())
 
-		const diff = expireDate.diff(now, 'minutes')
+		// const diff = expireDate.diff(now, 'minutes')
 
-		if (diff < 10 && !retry) {
-			retry = true
+		// if (diff < 10 && !retry) {
+		// 	retry = true
 
-			const token = localStorageTokens.getRefreshToken()
-			refreshToken(token).then((res) => {
-				localStorageTokens.setToken(res.data)
-			})
-		} else {
-			retry = false
-		}
+		// 	const token = localStorageTokens.getRefreshToken()
+		// 	refreshToken(token).then((res) => {
+		// 		localStorageTokens.setToken(res.data)
+		// 	})
+		// } else {
+		// 	retry = false
+		// }
 
 		return response
 	},
@@ -54,6 +54,6 @@ api.interceptors.response.use(
 		return Promise.reject(error)
 	}
 )
-export const refreshToken = (refresh_token) => api.post('refresh', { refresh_token }) // eslint-disable-line camelcase
+// export const refreshToken = (refresh_token) => api.post('refresh', { refresh_token }) // eslint-disable-line camelcase
 
 // export default axios

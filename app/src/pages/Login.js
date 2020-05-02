@@ -4,11 +4,13 @@ import Input from '../ui/Input'
 import StyledText from '../ui/StyledText'
 import Button from '../ui/Button'
 import useNavigate from '../hooks/useNavigate'
+import useSignIn from '../hooks/useSignIn'
 import { login } from '../api/auth'
 import { errorsNotifHandler, successNotifHandler } from '../utils/notifHendler'
 
 const Login = () => {
 	const navigate = useNavigate()
+	const signIn = useSignIn()
 	const toRegistration = () => navigate('/registration')
 	const onSubmit = async () => {
 		let email = document.getElementById('email').value
@@ -17,11 +19,11 @@ const Login = () => {
 		try {
 			const res = await login({ email, password })
 			successNotifHandler(res)
+			signIn(res.data)
 		} catch (e) {
 			console.log('e', e)
 			errorsNotifHandler(e)
-		}
-		finally{
+		} finally {
 			console.log('login => done')
 		}
 		// if(!email)
