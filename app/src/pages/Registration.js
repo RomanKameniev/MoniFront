@@ -1,4 +1,4 @@
-import React, { createRef, useEffect, useState } from 'react'
+import React /*, { createRef, useEffect, useState }*/ from 'react'
 import Box from '../ui/Box'
 import Input from '../ui/Input'
 import StyledText from '../ui/StyledText'
@@ -26,7 +26,7 @@ const Registration = () => {
 	}
 	return (
 		<Box h="800px" justifyContent="center">
-			<Box fd="column" bc="inherit" maxHeight="30em" maxWidth="400px" bc="#333" margin="10px" marginTop="30px" borderRadius="15px">
+			<Box fd="column" maxHeight="30em" maxWidth="400px" bc="#333" margin="10px" marginTop="30px" borderRadius="15px">
 				<StyledText alignSelf="center" padding="5px" fontSize="35px" fontStyle="bold" color="#ffffff">
 					Registration
 				</StyledText>

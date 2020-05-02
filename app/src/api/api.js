@@ -2,7 +2,11 @@ import axios from 'axios'
 import moment from 'moment'
 
 import * as localStorageTokens from '../localStorage'
-const baseURL = `https://api.moni.wtf`
+// const baseURL = `https://api.moni.wtf`
+const baseURL = 'http://localhost:8080'
+
+// export const api = axios.create({ baseURL, headers: { Accept: 'application/json' } })
+export const api = axios.create({ baseURL, headers: { Accept: 'application/json' } })
 
 api.interceptors.request.use(
 	(config) => {
@@ -50,8 +54,6 @@ api.interceptors.response.use(
 		return Promise.reject(error)
 	}
 )
-export const refreshToken = refresh_token => api.post('refresh', { refresh_token }); // eslint-disable-line camelcase
-
-export const api = axios.create({ baseURL, headers: { Accept: 'application/json' } })
+export const refreshToken = (refresh_token) => api.post('refresh', { refresh_token }) // eslint-disable-line camelcase
 
 // export default axios
