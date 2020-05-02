@@ -1,17 +1,29 @@
-import React/*, {  useEffect, useState }*/ from 'react'
+import React /*, {  useEffect, useState }*/ from 'react'
 import Box from '../ui/Box'
 import Input from '../ui/Input'
 import StyledText from '../ui/StyledText'
 import Button from '../ui/Button'
 import useNavigate from '../hooks/useNavigate'
+import { login } from '../api/auth'
+import { errorsNotifHandler, successNotifHandler } from '../utils/notifHendler'
 
 const Login = () => {
 	const navigate = useNavigate()
 	const toRegistration = () => navigate('/registration')
-	const onSubmit = () => {
+	const onSubmit = async () => {
 		let email = document.getElementById('email').value
-		let pass = document.getElementById('password').value
-		console.log('email, pass', email, pass)
+		let password = document.getElementById('password').value
+		console.log('email, pass', email, password)
+		try {
+			const res = await login({ email, password })
+			successNotifHandler(res)
+		} catch (e) {
+			console.log('e', e)
+			errorsNotifHandler(e)
+		}
+		finally{
+			console.log('login => done')
+		}
 		// if(!email)
 	}
 
