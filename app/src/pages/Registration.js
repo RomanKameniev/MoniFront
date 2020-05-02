@@ -4,16 +4,25 @@ import Input from '../ui/Input'
 import StyledText from '../ui/StyledText'
 import Button from '../ui/Button'
 import useNavigate from '../hooks/useNavigate'
+import { registration } from '../api/auth'
 
 const Registration = () => {
 	const navigate = useNavigate()
 	const toLogin = () => navigate('/login')
-	const onSubmit = () => {
+	const onSubmit = async () => {
 		let email = document.getElementById('email').value
 		let p1 = document.getElementById('p1').value
 		let p2 = document.getElementById('p2').value
 		let login = document.getElementById('login').value
 		console.log('email', email, p1, p2, login)
+		try {
+			let res = await registration({ email, password: p1, login })
+			console.log('res', res)
+		} catch (e) {
+			console.log('e', e)
+		} finally {
+			console.log('finally')
+		}
 	}
 	return (
 		<Box h="800px" justifyContent="center">
