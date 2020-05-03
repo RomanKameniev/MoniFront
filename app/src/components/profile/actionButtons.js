@@ -4,6 +4,7 @@ import Button from '../../ui/Button'
 import StyledText from '../../ui/StyledText'
 import ReactModal from 'react-modal'
 import DeviceBody from './deviceBody'
+import UserBody from './userBody'
 
 const customStyles = {
 	content: {
@@ -37,6 +38,7 @@ const ActionButtons = () => {
 		<Box maxHeight="10em" fd="column" padding="5px">
 			<ReactModal isOpen={device || user} onRequestClose={closeModal} style={customStyles} contentLabel={device ? 'Device' : 'User'}>
 				{device && <DeviceBody closeModal={closeModal} />}
+				{user && <UserBody closeModal={closeModal} />}
 			</ReactModal>
 			<StyledText fontSize="30px" fontStyle="bold">
 				Available actions:
