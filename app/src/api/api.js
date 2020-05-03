@@ -2,8 +2,8 @@ import axios from 'axios'
 // import moment from 'moment'
 
 import * as localStorageTokens from '../localStorage'
-// const baseURL = `https://api.moni.wtf`
-const baseURL = 'http://localhost:80'
+const baseURL = `https://api.moni.wtf`
+// const baseURL = 'http://localhost:80'
 
 // export const api = axios.create({ baseURL, headers: { Accept: 'application/json' } })
 export const api = axios.create({ baseURL, headers: { Accept: 'application/json' } })
