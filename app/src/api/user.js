@@ -9,6 +9,10 @@ export const getUser = async () => {
 export const addUserToContacts = async ({ email, userId }) => {
 	const data = email ? { email } : { userId }
 	const res = await api.post('/user', data)
-	console.log('adduserToContacts', res)
 	return res
+}
+
+export const getUserContacts = async () => {
+	const res = await api.get('/contacts')
+	return res.data.data
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import Box from '../../ui/Box'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import DeviceBody from './tabsBody/deviceBody'
+import UsersBody from './tabsBody/usersBody'
 
 const TabsComponent = () => {
 	return (
@@ -17,7 +18,7 @@ const TabsComponent = () => {
 					<DeviceBody />
 				</TabPanel>
 				<TabPanel>
-					<h2>Any content 2</h2>
+					<UsersBody/>
 				</TabPanel>
 				<TabPanel>
 					<h2>Any content 1</h2>
