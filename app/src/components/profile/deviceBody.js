@@ -13,10 +13,10 @@ const DeviceBody = ({ closeModal }) => {
 		const deviceId = document.getElementById('deviceId').value
 
 		try {
-			if (name && type && deviceId) {
+			// if (name && type && deviceId) {
 				const res = await addDevice({ name, type, deviceId })
 				successNotifHandler(res)
-			}
+			// }
 		} catch (e) {
 			errorsNotifHandler(e)
 		} finally {

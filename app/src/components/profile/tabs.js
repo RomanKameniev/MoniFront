@@ -1,6 +1,7 @@
 import React from 'react'
 import Box from '../../ui/Box'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import DeviceBody from './tabsBody/deviceBody'
 
 const TabsComponent = () => {
 	return (
@@ -13,9 +14,7 @@ const TabsComponent = () => {
 					<Tab>Payment</Tab>
 				</TabList>
 				<TabPanel>
-					<Box minWidth="20em" bc="inherit" minHeight="10em">
-						Devices
-					</Box>
+					<DeviceBody />
 				</TabPanel>
 				<TabPanel>
 					<h2>Any content 2</h2>
