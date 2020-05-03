@@ -1,10 +1,11 @@
-import * as localStorageTokens from '@dezigned/utils/localStorageTokens'
+import * as localStorageTokens from '../localStorage'
 import { resetViewer } from './viewer'
-import { resetAuthenticated } from './authenticated'
+import { resetAuthenticated } from './authentificated'
 
-export default logout = (dispatch) => {
+const logout = (dispatch) => {
 	localStorageTokens.clearToken()
 
 	dispatch(resetViewer)
 	dispatch(resetAuthenticated)
 }
+export default logout

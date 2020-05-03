@@ -3,10 +3,13 @@ import Box from '../../ui/Box'
 import NoPhoto from '../../ui/assets/nophoto.svg'
 import StyledText from '../../ui/StyledText'
 import Button from '../../ui/Button'
+import useLogout from '../../hooks/useLogout'
 
 const UserLayout = ({ email, login }) => {
+	const SignOut = useLogout()
 	const logout = () => {
 		console.log('logout pressed')
+		SignOut()
 	}
 
 	return (

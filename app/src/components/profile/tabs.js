@@ -4,7 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
 const TabsComponent = () => {
 	return (
-		<Box minHeight="20em" minWidth="40em" bc="inherit" borderRadius="10px">
+		<Box minHeight="20em" bc="inherit" borderRadius="10px">
 			<Tabs defaultIndex={2} className="tabs-component">
 				<TabList minWidth="20em">
 					<Tab>Devices</Tab>
