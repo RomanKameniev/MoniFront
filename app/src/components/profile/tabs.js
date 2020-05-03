@@ -10,7 +10,7 @@ const TabsComponent = () => {
 			<Tabs defaultIndex={2} className="tabs-component">
 				<TabList minWidth="20em">
 					<Tab>Devices</Tab>
-					<Tab>Users</Tab>
+					<Tab>Contacts</Tab>
 					<Tab>Charts</Tab>
 					<Tab>Payment</Tab>
 				</TabList>
