@@ -1,9 +1,9 @@
 import React from 'react'
 import Box from '../../../ui/Box'
 import StyledText from '../../../ui/StyledText'
-import { getDevices } from '../../../api/devices'
+import { getDevices, removeDeviceById } from '../../../api/devices'
 import useAsync from '../../../hooks/useAsync'
-import { errorsNotifHandler } from '../../../utils/notifHendler'
+import { errorsNotifHandler, successNotifHandler } from '../../../utils/notifHendler'
 import Devider from '../../../ui/Devider'
 import Add from '../../../ui/assets/add.svg'
 import Bin from '../../../ui/assets/bin.svg'
@@ -11,7 +11,7 @@ import Edit from '../../../ui/assets/edit.svg'
 
 const DeviceBody = () => {
 	console.log('in devices')
-	const { result: owned, isLoading, error } = useAsync(getDevices, {}, true)
+	const { result: owned, isLoading, error, refetch } = useAsync(getDevices, {}, true)
 
 	if (error) errorsNotifHandler(error)
 	if (isLoading || error) return <StyledText>Loading...</StyledText>
@@ -43,7 +43,7 @@ const DeviceBody = () => {
 						<Devider />
 						<Box maxWidth="40em" fd="column" bc="inherit" alignItems="flex-start">
 							{owned.map((i, key) => {
-								return <DeviceCell key={key} {...i} />
+								return <DeviceCell key={key} {...i} refetch={refetch} />
 							})}
 						</Box>
 					</Box>
@@ -74,7 +74,18 @@ const DeviceBody = () => {
 	)
 }
 
-const DeviceCell = ({ deviceId, type, name }) => {
+const DeviceCell = ({ deviceId, type, name, refetch }) => {
+	const removeDevice = async () => {
+		try {
+			const res = await removeDeviceById(deviceId)
+			successNotifHandler(res)
+		} catch (e) {
+			errorsNotifHandler(e)
+		} finally {
+			refetch()
+		}
+	}
+
 	return (
 		<Box maxWidth="40em" justifyContent="flex-start" bc="inherit" textAlign="left">
 			<StyledText margin="5px" width="10em" textAlign="left">
@@ -94,7 +105,7 @@ const DeviceCell = ({ deviceId, type, name }) => {
 					<img onClick={() => console.log('edit')} src={Add} style={{ width: '25px' }} alt="Add new user" />
 				</Box>{' '}
 				<Box className="image-action" maxWidth="3em" display="block" max-height="25px" bc="inherit">
-					<img onClick={() => console.log('edit')} src={Bin} style={{ width: '25px' }} alt="remove itme" />
+					<img onClick={removeDevice} src={Bin} style={{ width: '25px' }} alt="remove itme" />
 				</Box>
 			</Box>
 		</Box>
