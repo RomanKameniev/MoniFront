@@ -3,6 +3,7 @@ import Box from '../../ui/Box'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import DeviceBody from './tabsBody/deviceBody'
 import UsersBody from './tabsBody/usersBody'
+import PaymentBody from './tabsBody/paymentBody'
 
 const TabsComponent = () => {
 	return (
@@ -18,13 +19,13 @@ const TabsComponent = () => {
 					<DeviceBody />
 				</TabPanel>
 				<TabPanel>
-					<UsersBody/>
+					<UsersBody />
 				</TabPanel>
 				<TabPanel>
 					<h2>Any content 1</h2>
 				</TabPanel>
 				<TabPanel>
-					<h2>Any content 2</h2>
+					<PaymentBody />
 				</TabPanel>
 			</Tabs>
 		</Box>

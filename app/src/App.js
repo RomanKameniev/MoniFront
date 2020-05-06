@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import './App.css'
 import 'react-notifications/lib/notifications.css';
 import 'react-tabs/style/react-tabs.css';
+import 'react-credit-cards/es/styles-compiled.css';
 import Header from './components/header'
 import Footer from './components/footer'
 import Router from './Router'

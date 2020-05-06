@@ -6,7 +6,7 @@ export const registration = async (data) => {
 	return res
 }
 
-export const login = async (data) => {
+export const loginWithEmail = async (data) => {
 	const res = await api.post('/login', data)
 	console.log('login response', res)
 	return res

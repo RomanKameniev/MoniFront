@@ -57,10 +57,10 @@
 	cursor: pointer;
 }
 
-.image-action {
+.image-action,
+.google-auth {
 	cursor: pointer;
 }
-
 
 @keyframes App-logo-spin {
 	from {

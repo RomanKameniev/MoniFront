@@ -33,9 +33,9 @@ export const errorsNotifHandler = (error) => {
 		errorObj.message = error.response.statusText
 		// errorObj.description = data.error ? data.error : '';
 	}
-    console.log('{...errorObj, ...data}', { ...errorObj, ...data })
-    errorObj.message = data.message
-	createNotification({...data, type:"error"  })
+	console.log('{...errorObj, ...data}', { ...errorObj, ...data })
+	errorObj.message = data.message
+	createNotification({ ...data, type: 'error' })
 
 	return errorObj
 }
