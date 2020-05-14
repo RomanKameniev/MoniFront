@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Box from '../../../ui/Box'
 import StyledText from '../../../ui/StyledText'
-import { getDevices, removeDeviceById } from '../../../api/devices'
+import { getDevices, removeDeviceById, addUserToDevice } from '../../../api/devices'
 import useAsync from '../../../hooks/useAsync'
 import { errorsNotifHandler, successNotifHandler } from '../../../utils/notifHendler'
 import Devider from '../../../ui/Devider'
 import Add from '../../../ui/assets/add.svg'
 import Bin from '../../../ui/assets/bin.svg'
 import Edit from '../../../ui/assets/edit.svg'
+import UserBody from '../userBody'
+import ReactModal from 'react-modal'
 
 const DeviceBody = () => {
 	console.log('in devices')
@@ -74,7 +76,26 @@ const DeviceBody = () => {
 	)
 }
 
+const customStyles = {
+	content: {
+		marginTop: '25em',
+		left: '50%',
+		right: 'auto',
+		width: '30em',
+		height: '30em',
+		// top: '50%',
+		// width:"30%",
+		// left: '50%',
+		// right: 'auto',
+		// bottom: 'auto',
+		// marginRight: '-50%',
+		transform: 'translate(-50%, -50%)',
+	},
+}
+
 const DeviceCell = ({ deviceId, type, name, refetch }) => {
+	const [addUser, setAddUser] = useState(false)
+
 	const removeDevice = async () => {
 		try {
 			const res = await removeDeviceById(deviceId)
@@ -86,29 +107,54 @@ const DeviceCell = ({ deviceId, type, name, refetch }) => {
 		}
 	}
 
+	const setOpenAddUser = () => setAddUser(true)
+
+	const onCloseModal = () => {
+		setAddUser(false)
+	}
+
+	const _onAddUserToDevice = async () => {
+		const email = document.getElementById('email').value
+		const userId = document.getElementById('userId').value
+		console.log('add user', email)
+		try {
+			const res = await addUserToDevice({ email, userId })
+			successNotifHandler(res)
+		} catch (e) {
+			errorsNotifHandler(e)
+		} finally {
+			onCloseModal()
+		}
+	}
+
 	return (
-		<Box maxWidth="40em" justifyContent="flex-start" bc="inherit" textAlign="left">
-			<StyledText margin="5px" width="10em" textAlign="left">
-				{name}
-			</StyledText>
-			<StyledText margin="5px" width="10em" textAlign="left">
-				{type}
-			</StyledText>
-			<StyledText margin="5px" width="10em" textAlign="left">
-				{deviceId}
-			</StyledText>
-			<Box margin="5px" width="10em" alignItems="center" bc="inherit">
-				<Box className="image-action" maxWidth="3em" display="block" max-height="25px" bc="inherit">
-					<img onClick={() => console.log('edit')} src={Edit} style={{ width: '25px' }} alt="edit" />
-				</Box>
-				<Box className="image-action" maxWidth="3em" display="block" max-height="25px" bc="inherit">
-					<img onClick={() => console.log('edit')} src={Add} style={{ width: '25px' }} alt="Add new user" />
-				</Box>{' '}
-				<Box className="image-action" maxWidth="3em" display="block" max-height="25px" bc="inherit">
-					<img onClick={removeDevice} src={Bin} style={{ width: '25px' }} alt="remove itme" />
+		<>
+			<ReactModal isOpen={addUser} onRequestClose={onCloseModal} style={customStyles} contentLabel={'Add User'}>
+				<UserBody addToDevice={_onAddUserToDevice} closeModal={onCloseModal} />
+			</ReactModal>
+			<Box maxWidth="40em" justifyContent="flex-start" bc="inherit" textAlign="left">
+				<StyledText margin="5px" width="10em" textAlign="left">
+					{name}
+				</StyledText>
+				<StyledText margin="5px" width="10em" textAlign="left">
+					{type}
+				</StyledText>
+				<StyledText margin="5px" width="10em" textAlign="left">
+					{deviceId}
+				</StyledText>
+				<Box margin="5px" width="10em" alignItems="center" bc="inherit">
+					<Box className="image-action" maxWidth="3em" display="block" max-height="25px" bc="inherit">
+						<img onClick={() => console.log('edit')} src={Edit} style={{ width: '25px' }} alt="edit" />
+					</Box>
+					<Box className="image-action" maxWidth="3em" display="block" max-height="25px" bc="inherit">
+						<img onClick={setOpenAddUser} src={Add} style={{ width: '25px' }} alt="Add new user" />
+					</Box>{' '}
+					<Box className="image-action" maxWidth="3em" display="block" max-height="25px" bc="inherit">
+						<img onClick={removeDevice} src={Bin} style={{ width: '25px' }} alt="remove itme" />
+					</Box>
 				</Box>
 			</Box>
-		</Box>
+		</>
 	)
 }
 

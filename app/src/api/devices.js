@@ -15,3 +15,9 @@ export const removeDeviceById = async (deviceId) => {
 	const res = await api.delete('/device', { data: { deviceId } })
 	return res
 }
+
+export const addUserToDevice = async ({ email, userId }) => {
+	const data = email ? { email } : { userId }
+	const res = await api.post('/add-user-to-device', data)
+	return res
+}

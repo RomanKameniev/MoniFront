@@ -6,7 +6,7 @@ import Input from '../../ui/Input'
 import { addUserToContacts } from '../../api/user'
 import { successNotifHandler, errorsNotifHandler } from '../../utils/notifHendler'
 
-const UserBody = ({ closeModal }) => {
+const UserBody = ({ addToDevice, closeModal }) => {
 	const onSubmitUser = async () => {
 		const email = document.getElementById('email').value
 		const userId = document.getElementById('userId').value
@@ -35,7 +35,7 @@ const UserBody = ({ closeModal }) => {
 				<StyledText>User Id: </StyledText>
 				<Input id="userId" type="text" />
 			</Box>
-			<Button onClick={onSubmitUser}>Submit</Button>
+			<Button onClick={addToDevice || onSubmitUser}>Submit</Button>
 		</Box>
 	)
 }
