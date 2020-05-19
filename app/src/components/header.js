@@ -24,7 +24,7 @@ const Header = () => {
 		}
 	}, [viewer])
 	return (
-		<Box bc="#333" h="120px">
+		<Box bc="#051b6b" h="120px">
 			<Box className="image-logo" display="block" max-height="75px" max-width="200px" margin="15px" bc="inherit">
 				<img onClick={onLogoClick} src={Logo} style={{ padding: 5 }} alt="logo" />
 			</Box>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Box = ({ className, onClick, fd = 'row', wrap = false, display = 'flex', w = '100%', h = '100%', bc = '#aaa', children, ...props }) => {
+const Box = ({ className, onClick, fd = 'row', wrap = false, display = 'flex', w = '100%', h = '100%', bc = '#ffffff', children, ...props }) => {
 	return (
 		<div
 			className={className}

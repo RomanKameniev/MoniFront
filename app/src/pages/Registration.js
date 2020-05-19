@@ -27,24 +27,24 @@ const Registration = () => {
 	}
 	return (
 		<Box h="800px" justifyContent="center">
-			<Box fd="column" maxHeight="30em" maxWidth="400px" bc="#333" margin="10px" marginTop="30px" borderRadius="15px">
+			<Box fd="column" maxHeight="32em" maxWidth="400px" bc="#333" margin="10px" marginTop="30px" borderRadius="15px">
 				<StyledText alignSelf="center" padding="5px" fontSize="35px" fontStyle="bold" color="#ffffff">
 					Registration
 				</StyledText>
-				<Box fd="column" bc="inherit" maxHeight="60px" maxWidth="370px" padding="7px">
-					<StyledText color="#FFFFFF">Email</StyledText>
+				<Box fd="column" bc="inherit" maxHeight="80px" maxWidth="370px" padding="7px">
+					<StyledText color="#FFFFFF" margin="5px">Email</StyledText>
 					<Input id="email" type="email" placeholder="email" />
 				</Box>
-				<Box fd="column" bc="inherit" maxHeight="60px" maxWidth="370px" padding="7px">
-					<StyledText color="#FFFFFF">Login</StyledText>
+				<Box fd="column" bc="inherit" maxHeight="80px" maxWidth="370px" padding="7px">
+					<StyledText color="#FFFFFF" margin="5px">Login</StyledText>
 					<Input id="login" type="text" placeholder="login" />
 				</Box>
-				<Box fd="column" bc="inherit" maxHeight="60px" maxWidth="370px" padding="7px">
-					<StyledText color="#FFFFFF">Password</StyledText>
+				<Box fd="column" bc="inherit" maxHeight="80px" maxWidth="370px" padding="7px">
+					<StyledText color="#FFFFFF" margin="5px">Password</StyledText>
 					<Input id="p1" type="password" placeholder="password" />
 				</Box>
-				<Box fd="column" bc="inherit" maxHeight="60px" maxWidth="370px" padding="7px">
-					<StyledText color="#FFFFFF">Password</StyledText>
+				<Box fd="column" bc="inherit" maxHeight="80px" maxWidth="370px" padding="7px">
+					<StyledText color="#FFFFFF" margin="5px">Password</StyledText>
 					<Input id="p2" type="password" placeholder="password" />
 				</Box>
 				<Button onClick={onSubmit} type="disabled" alignSelf="flex-end" margin="15px">
@@ -52,7 +52,7 @@ const Registration = () => {
 				</Button>
 
 				<Box bc="inherit" maxWidth="300px" maxHeight="50px" padding="15px" borderRadius="10px">
-					<StyledText>Already have account?</StyledText>
+					<StyledText color="#eee">Already have account?</StyledText>
 					<StyledText className="registration-link" color="#4d79ff" onClick={toLogin} marginLeft="5px">
 						Login
 					</StyledText>

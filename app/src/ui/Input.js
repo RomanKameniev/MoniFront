@@ -22,7 +22,7 @@ const Input = ({
 			tabIndex={tabIndex}
 			type={type}
 			alt={alt}
-			placeholder={placeholder}
+			// placeholder={placeholder}
 			autoCorrect
 			autoComplete
 			{...props}

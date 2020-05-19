@@ -51,22 +51,22 @@ const Login = () => {
 
 	return (
 		<Box h="900px" justifyContent="center">
-			<Box fd="column" maxHeight="22em" maxWidth="400px" bc="#333" margin="10px" marginTop="30px" borderRadius="15px">
+			<Box fd="column" maxHeight="24em" maxWidth="400px" bc="#333" margin="10px" marginTop="30px" borderRadius="15px">
 				<StyledText alignSelf="center" padding="5px" fontSize="35px" fontStyle="bold" color="#ffffff">
 					Login
 				</StyledText>
-				<Box fd="column" bc="inherit" maxHeight="60px" maxWidth="370px" padding="7px">
-					<StyledText color="#FFFFFF">Email</StyledText>
+				<Box fd="column" bc="inherit" maxHeight="80px" maxWidth="370px" padding="7px">
+					<StyledText color="#FFFFFF" margin="5px">Email</StyledText>
 					<Input id="email" type="email" placeholder="email" />
 				</Box>
-				<Box fd="column" bc="inherit" maxHeight="60px" maxWidth="370px" padding="7px">
-					<StyledText color="#FFFFFF">Password</StyledText>
+				<Box fd="column" bc="inherit" maxHeight="80px" maxWidth="370px" padding="7px">
+					<StyledText color="#FFFFFF" margin="5px">Password</StyledText>
 					<Input id="password" type="password" placeholder="password" />
 				</Box>
 				<Button onClick={onSubmit} type="disabled" alignSelf="flex-end" margin="15px">
 					Submit
 				</Button>
-				<GoogleLogin clientId={CLIENT_ID} buttonText="Login" onSuccess={login} onFailure={handleLoginFailure} cookiePolicy={'single_host_origin'} responseType="code,token" />
+				<GoogleLogin clientId={CLIENT_ID} buttonText="Login with Google" onSuccess={login} onFailure={handleLoginFailure} cookiePolicy={'single_host_origin'} responseType="code,token" />
 				{/* 
 				<GoogleLogin
 					className="google-auth"
@@ -80,7 +80,7 @@ const Login = () => {
 				</GoogleLogin> */}
 
 				<Box bc="inherit" maxWidth="300px" maxHeight="50px" padding="15px" borderRadius="10px">
-					<StyledText>Don't have account yet?</StyledText>
+					<StyledText color="#eee">Don't have account yet?</StyledText>
 					<StyledText className="registration-link" color="#4d79ff" marginLeft="5px" onClick={toRegistration}>
 						Registration
 					</StyledText>
