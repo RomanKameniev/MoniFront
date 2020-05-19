@@ -35,7 +35,7 @@ const ActionButtons = () => {
 	}
 
 	return (
-		<Box maxHeight="10em" fd="column" padding="5px">
+		<Box height="2em" paddingTop="50px" width="100%" fd="column" alignItems="center">
 			<ReactModal isOpen={device || user} onRequestClose={closeModal} style={customStyles} contentLabel={device ? 'Device' : 'User'}>
 				{device && <DeviceBody closeModal={closeModal} />}
 				{user && <UserBody closeModal={closeModal} />}
@@ -43,10 +43,12 @@ const ActionButtons = () => {
 			<StyledText fontSize="30px" fontStyle="bold">
 				Available actions:
 			</StyledText>
-			<Button onClick={_onClickedDevice}>Add Device</Button>
-			<Button onClick={_onClickedUser}>Add User</Button>
-			<Button>Pay</Button>
-			<Button>Split Bill</Button>
+			<Box fd="row" justifyContent="center">
+				<Button onClick={_onClickedDevice}>Add Device</Button>
+				<Button onClick={_onClickedUser}>Add User</Button>
+				<Button>Pay</Button>
+				<Button>Split Bill</Button>
+			</Box>
 		</Box>
 	)
 }

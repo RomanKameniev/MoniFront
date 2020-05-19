@@ -13,7 +13,7 @@ const UserLayout = ({ email, login }) => {
 	}
 
 	return (
-		<Box bc="#eee" borderRadius="10px">
+		<Box w="40em" h="20em" borderRadius="10px">
 			<Box className="image-my" display="block" max-height="65px" max-width="200px" margin="10px" bc="inherit">
 				<img src={NoPhoto} alt="logo" />
 			</Box>

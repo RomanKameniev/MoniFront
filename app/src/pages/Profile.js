@@ -8,13 +8,13 @@ const Profile = () => {
 	const user = useSelector(selectors.viewer)
 
 	return (
-		<Box fd="column" alignItems="center">
-			<Box h="15em" w="80%" padding="2em" wrap>
+		<Box fd="column" justifyContent="flex-start" alignItems="center">
+			<Box h="25em" w="100%" fd="column" alignItems="center" padding="2em" wrap>
 				<UserLayout {...user} />
 				<ActionButtons />
 			</Box>
 
-			<Box minHeight="20em" w="80%" bc="inherit" padding="2em">
+			<Box minHeight="20em" w="80%" bc="inherit">
 				<Tabs />
 			</Box>
 		</Box>
