@@ -4,8 +4,13 @@ import StyledText from '../ui/StyledText'
 import HomeImage from '../ui/assets/home.png'
 import LoginImage from '../ui/assets/login.png'
 import MoniImage from '../ui/assets/moni.png'
+import { _translate } from '../languages/index.js'
 
-const ITEMS = [{ image: MoniImage }, { image: LoginImage }, { image: HomeImage }]
+const ITEMS = [
+	{ image: MoniImage, text: _translate('main_first_title'), description: _translate('main_first_desc') },
+	{ image: LoginImage, text: _translate('main_second_title'), description: _translate('main_second_desc') },
+	{ image: HomeImage, text: _translate('main_third_title'), description: _translate('main_third_desc') },
+]
 
 const Home = () => {
 	return (
@@ -19,7 +24,7 @@ const Home = () => {
 
 const Item = ({ text = 'Lorem ipsum', description = 'hello desc', image, position }) => {
 	return (
-		<Box h="1050px" marginTop="4em"  flexDirection={!position ? 'row' : 'row-reverse'} justifyContent="center">
+		<Box h="1050px" marginTop="4em" flexDirection={!position ? 'row' : 'row-reverse'} justifyContent="center">
 			<Box h="1050px" padding="2em" flexDirection="column" alignItems={!position ? 'flex-end' : 'flex-start'}>
 				<StyledText fontSize="70px" fontStyle="bold" fontWeight="600">
 					{text}

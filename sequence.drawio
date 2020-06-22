@@ -1,0 +1,167 @@
+<mxfile host="localhost" modified="2020-05-19T22:50:19.236Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.45.1 Chrome/78.0.3904.130 Electron/7.2.4 Safari/537.36" etag="l-7F8GWywTQnNXcCAfJ6" version="13.0.9">
+    <diagram id="6hGFLwfOUW9BJ-s0fimq" name="Page-1">
+        <mxGraphModel dx="961" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="2">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="145" y="920" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="145" y="220"/>
+                            <mxPoint x="145" y="220"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value="user" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="40" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="3">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="385" y="920" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="Frontend" style="html=1;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="40" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;dashed=1;endArrow=none;endFill=0;" edge="1" parent="1" source="4">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="605" y="920" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="Backend" style="html=1;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="40" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="add device&lt;br&gt;" style="endArrow=open;endFill=1;endSize=12;html=1;" edge="1" parent="1">
+                    <mxGeometry x="-0.0435" y="10" width="160" relative="1" as="geometry">
+                        <mxPoint x="150" y="200" as="sourcePoint"/>
+                        <mxPoint x="380" y="200" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="230" y="200"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="9" value="add user to device" style="endArrow=open;endFill=1;endSize=12;html=1;" edge="1" parent="1">
+                    <mxGeometry x="-0.0435" y="10" width="160" relative="1" as="geometry">
+                        <mxPoint x="150" y="320" as="sourcePoint"/>
+                        <mxPoint x="380" y="320" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" edge="1" parent="1" source="2" target="2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="save device to server" style="endArrow=open;endFill=1;endSize=12;html=1;" edge="1" parent="1">
+                    <mxGeometry x="0.0571" y="20" width="160" relative="1" as="geometry">
+                        <mxPoint x="389" y="220" as="sourcePoint"/>
+                        <mxPoint x="599" y="220" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="save contact to server" style="endArrow=open;endFill=1;endSize=12;html=1;" edge="1" parent="1">
+                    <mxGeometry x="0.0476" y="20" width="160" relative="1" as="geometry">
+                        <mxPoint x="390" y="350" as="sourcePoint"/>
+                        <mxPoint x="600" y="350" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="13" value="create bill&lt;br&gt;" style="endArrow=open;endFill=1;endSize=12;html=1;" edge="1" parent="1">
+                    <mxGeometry x="-0.0435" y="20" width="160" relative="1" as="geometry">
+                        <mxPoint x="150" y="490" as="sourcePoint"/>
+                        <mxPoint x="380" y="490" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="display billing form" style="endArrow=none;endFill=0;endSize=12;html=1;dashed=1;startArrow=open;startFill=0;" edge="1" parent="1">
+                    <mxGeometry y="20" width="160" relative="1" as="geometry">
+                        <mxPoint x="140" y="540" as="sourcePoint"/>
+                        <mxPoint x="380" y="540" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="15" value="fill card data" style="endArrow=open;endFill=1;endSize=12;html=1;" edge="1" parent="1">
+                    <mxGeometry x="-0.0435" y="20" width="160" relative="1" as="geometry">
+                        <mxPoint x="150" y="600" as="sourcePoint"/>
+                        <mxPoint x="380" y="600" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="send credantions to server" style="endArrow=open;endFill=1;endSize=12;html=1;" edge="1" parent="1">
+                    <mxGeometry x="0.0476" y="20" width="160" relative="1" as="geometry">
+                        <mxPoint x="390" y="620" as="sourcePoint"/>
+                        <mxPoint x="600" y="620" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;dashed=1;" edge="1" parent="1" source="17">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="820" y="920" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="820" y="750"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="17" value="Bank" style="html=1;" vertex="1" parent="1">
+                    <mxGeometry x="770" y="40" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="new device added" style="endArrow=none;endFill=0;endSize=12;html=1;dashed=1;startArrow=classic;startFill=1;" edge="1" parent="1">
+                    <mxGeometry x="-0.2174" y="20" width="160" relative="1" as="geometry">
+                        <mxPoint x="140" y="270" as="sourcePoint"/>
+                        <mxPoint x="600" y="270" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="new contact added" style="endArrow=none;endFill=0;endSize=12;html=1;dashed=1;startArrow=open;startFill=0;" edge="1" parent="1">
+                    <mxGeometry x="-0.3333" y="20" width="160" relative="1" as="geometry">
+                        <mxPoint x="150" y="390" as="sourcePoint"/>
+                        <mxPoint x="600" y="390" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="sent payment credantion to bank system" style="endArrow=open;endFill=1;endSize=12;html=1;" edge="1" parent="1">
+                    <mxGeometry y="40" width="160" relative="1" as="geometry">
+                        <mxPoint x="610" y="640" as="sourcePoint"/>
+                        <mxPoint x="820" y="640" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="split bill between users" style="endArrow=open;endFill=1;endSize=12;html=1;" edge="1" parent="1">
+                    <mxGeometry x="-0.0435" y="20" width="160" relative="1" as="geometry">
+                        <mxPoint x="150" y="750" as="sourcePoint"/>
+                        <mxPoint x="380" y="750" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="operation obtained" style="endArrow=none;endFill=0;endSize=12;html=1;dashed=1;startArrow=classic;startFill=1;" edge="1" parent="1">
+                    <mxGeometry x="-0.0476" y="20" width="160" relative="1" as="geometry">
+                        <mxPoint x="610" y="680" as="sourcePoint"/>
+                        <mxPoint x="820" y="680" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="send operation status" style="endArrow=none;endFill=0;endSize=12;html=1;startArrow=classic;startFill=1;dashed=1;" edge="1" parent="1">
+                    <mxGeometry x="-0.4222" y="20" width="160" relative="1" as="geometry">
+                        <mxPoint x="150" y="700" as="sourcePoint"/>
+                        <mxPoint x="600" y="700" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="create bills for many users" style="endArrow=open;endFill=1;endSize=12;html=1;startArrow=none;startFill=0;" edge="1" parent="1">
+                    <mxGeometry x="-0.0476" y="20" width="160" relative="1" as="geometry">
+                        <mxPoint x="390" y="800" as="sourcePoint"/>
+                        <mxPoint x="600" y="800" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="save bill&amp;nbsp;" style="endArrow=open;endFill=1;endSize=12;html=1;" edge="1" parent="1">
+                    <mxGeometry x="0.0476" y="30" width="160" relative="1" as="geometry">
+                        <mxPoint x="390" y="560" as="sourcePoint"/>
+                        <mxPoint x="600" y="560" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
